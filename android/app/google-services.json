@@ -1,0 +1,91 @@
+{
+  "project_info": {
+    "project_number": "332202866314",
+    "firebase_url": "https://farm2plate-6766c-default-rtdb.firebaseio.com",
+    "project_id": "farm2plate-6766c",
+    "storage_bucket": "farm2plate-6766c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:332202866314:android:38c017ffc0d6269b92df73",
+        "android_client_info": {
+          "package_name": "com.appcraft.farm2plate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "332202866314-kl1nscha6oa57dm754ijcj6bq1e3jd7v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appcraft.farm2plate",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "332202866314-ulbjmqvf4929cu0n04p4velkrkb52pg1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfNci_RmvwDGN1Xemjsj_S0niQ8on1WqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "332202866314-ulbjmqvf4929cu0n04p4velkrkb52pg1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "332202866314-ioqlee1nhknntqc0u86p52eq3i2e7529.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.appcraft.farm2plate"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:332202866314:android:72612bd74d1a6a9892df73",
+        "android_client_info": {
+          "package_name": "com.example.grocery_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "332202866314-ulbjmqvf4929cu0n04p4velkrkb52pg1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfNci_RmvwDGN1Xemjsj_S0niQ8on1WqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "332202866314-ulbjmqvf4929cu0n04p4velkrkb52pg1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "332202866314-ioqlee1nhknntqc0u86p52eq3i2e7529.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.appcraft.farm2plate"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
