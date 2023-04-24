@@ -40,12 +40,12 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: 25,
                   ),
-                  padded(subTitle("Exclusive Order")),
+                  padded(subTitle("Exclusive Offers")),
                   getHorizontalItemSlider(exclusiveOffers),
                   SizedBox(
                     height: 15,
                   ),
-                  padded(subTitle("Best Selling")),
+                  padded(subTitle("Hot🔥")),
                   getHorizontalItemSlider(bestSelling),
                   SizedBox(
                     height: 15,

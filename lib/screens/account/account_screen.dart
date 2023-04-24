@@ -4,9 +4,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:grocery_app/common_widgets/app_text.dart';
 import 'package:grocery_app/controllers/firebase_users.dart';
 import 'package:grocery_app/helpers/column_with_seprator.dart';
+import 'package:grocery_app/screens/account/login_register.dart';
 import 'package:grocery_app/styles/colors.dart';
 import 'account_item.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 
@@ -15,8 +17,12 @@ class AccountScreen extends StatefulWidget {
   State<AccountScreen> createState() => _AccountScreenState();
 }
 
+
 class _AccountScreenState extends State<AccountScreen> {
     User? _currentUser;
+
+    dynamic userData;
+    
 
   @override
   void initState() {
@@ -24,11 +30,18 @@ class _AccountScreenState extends State<AccountScreen> {
     _getCurrentUser();
   }
 
-  void _getCurrentUser() {
+  Future<void> _getCurrentUser() async {
     final user = FirebaseAuth.instance.currentUser;
+
+    final userRef = FirebaseFirestore.instance.collection('users').doc(user?.uid);
+    final userSnapshot = await userRef.get();
+
     setState(() {
-      _currentUser = user;
+      _currentUser = userSnapshot.exists ? user : null;
+
+      userData = userSnapshot.data();
     });
+
   }
 
 
@@ -46,7 +59,7 @@ class _AccountScreenState extends State<AccountScreen> {
                 leading:
                     SizedBox(width: 65, height: 65, child: getImageHeader()),
                 title: AppText(
-                  text: _currentUser != null ? "Signed In" :"AppCraft",
+                  text: _currentUser != null ? userData['first_name'] + " " + userData['last_name']:"AppCraft",
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
@@ -110,7 +123,7 @@ class _AccountScreenState extends State<AccountScreen> {
               ),
             ),
             Text(
-              "Log Out",
+              _currentUser == null ? "Login": "Log Out",
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 18,
@@ -120,8 +133,8 @@ class _AccountScreenState extends State<AccountScreen> {
             Container()
           ],
         ),
-        onPressed: () {
-          Auth().signOut();
+        onPressed: () {  
+          _currentUser == null ? getLoginScreen() :Auth().signOut();
         },
       ),
     );
@@ -134,6 +147,12 @@ class _AccountScreenState extends State<AccountScreen> {
       // backgroundImage: AssetImage(imagePath),
       backgroundColor: AppColors.primaryColor.withOpacity(0.7),
     );
+  }
+
+  void getLoginScreen() {
+    Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => LoginPage()));
   }
 
   Widget getAccountItemWidget(AccountItem accountItem) {

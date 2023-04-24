@@ -29,8 +29,8 @@ var demoItems = [
       
   GroceryItem(
       id: "2",
-      name: "Red Apple",
-      description: "Fresh apples from the Garden of Eden",
+      name: "Applew",
+      description: "Fresh apples from the farm",
       category: "fruits",
       price: 4.99,
       imageUrl: "assets/images/grocery_images/apple.png",

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/common_widgets/app_button.dart';
 import 'package:grocery_app/common_widgets/app_text.dart';
+import 'package:grocery_app/screens/order_accepted_screen.dart';
 
 import '../order_failed_dialog.dart';
 
@@ -55,7 +56,7 @@ class _CheckoutBottomSheetState extends State<CheckoutBottomSheet> {
           getDivider(),
           checkoutRow("Promo Code", trailingText: "Pick Discount"),
           getDivider(),
-          checkoutRow("Total Cost", trailingText: "\$13.97"),
+          checkoutRow("Total Cost", trailingText: "258.97"),
           getDivider(),
           SizedBox(
             height: 30,
@@ -156,7 +157,7 @@ class _CheckoutBottomSheetState extends State<CheckoutBottomSheet> {
     showDialog(
         context: context,
         builder: (BuildContext context) {
-          return OrderFailedDialogue();
+          return OrderAcceptedScreen();
         });
   }
 }

@@ -31,7 +31,7 @@ class OrderAcceptedScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40),
               child: Text(
-                "Your item has been placed and is being processed",
+                "Check your e-mail for confirmation",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 16,

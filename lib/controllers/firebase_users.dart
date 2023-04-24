@@ -17,17 +17,19 @@ class Auth {
 
   }
 
-  Future<void> createEmailPassword({required String email, required String password}) async {
+  Future<void> createEmailPassword({required String email, required String password, required String firstName, required String lastName, required String phone}) async {
     UserCredential userCred = await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
 
-    await createUserDocument(userCred.user!.uid, email, userCred.user!.displayName!);
+    await createUserDocument(userCred.user!.uid, userCred.user!.email.toString(), firstName, phone, lastName);
   }
 
-  Future<void> createUserDocument(String userId, String email, String displayName) async {
+  Future<void> createUserDocument(String userId, String email, String firstName, String phone, String lastName) async {
   try {
     await FirebaseFirestore.instance.collection('users').doc(userId).set({
       'email': email,
-      'display_name': displayName,
+      'first_name': firstName,
+      'last_name': lastName,
+      'phone': phone,
       'created_at': FieldValue.serverTimestamp(),
     });
     print('User document created for user ID: $userId');
